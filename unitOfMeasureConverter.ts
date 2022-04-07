@@ -1,7 +1,7 @@
 type UnitOfMeasure = "L" | "G" | "KG" | "LB" | "CM" | "IN" | "FT" | "YD";
 
 const unitOfMeasureConverter = (
-	value: number,
+	quantity: number,
 	originalUnitOfMeasure: UnitOfMeasure,
 	desiredUnitOfMeasure: UnitOfMeasure
 ) => {
@@ -9,11 +9,11 @@ const unitOfMeasureConverter = (
 		L: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "G":
-					return value / 3.8;
+					return quantity / 3.8;
 				case "LB":
-					return value * (8 / 3.8);
+					return quantity * (8 / 3.8);
 				case "KG":
-					return value;
+					return quantity;
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -21,11 +21,11 @@ const unitOfMeasureConverter = (
 		G: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "L":
-					return value * 3.8;
+					return quantity * 3.8;
 				case "LB":
-					return value * 8;
+					return quantity * 8;
 				case "KG":
-					return value * (8 / 2.2);
+					return quantity * (8 / 2.2);
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -33,11 +33,11 @@ const unitOfMeasureConverter = (
 		KG: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "L":
-					return value;
+					return quantity;
 				case "LB":
-					return value * 2.2;
+					return quantity * 2.2;
 				case "G":
-					return value * (2.2 / 8);
+					return quantity * (2.2 / 8);
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -45,11 +45,11 @@ const unitOfMeasureConverter = (
 		LB: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "L":
-					return value / 2.2;
+					return quantity / 2.2;
 				case "G":
-					return value / 8;
+					return quantity / 8;
 				case "KG":
-					return value / 2.2;
+					return quantity / 2.2;
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -57,11 +57,11 @@ const unitOfMeasureConverter = (
 		CM: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "IN":
-					return value / 2.54;
+					return quantity / 2.54;
 				case "FT":
-					return value / (2.54 * 12);
+					return quantity / (2.54 * 12);
 				case "YD":
-					return value / (2.54 * 12 * 3);
+					return quantity / (2.54 * 12 * 3);
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -69,11 +69,11 @@ const unitOfMeasureConverter = (
 		IN: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "CM":
-					return value * 2.54;
+					return quantity * 2.54;
 				case "FT":
-					return value / 12;
+					return quantity / 12;
 				case "YD":
-					return value / (12 * 3);
+					return quantity / (12 * 3);
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -81,11 +81,11 @@ const unitOfMeasureConverter = (
 		FT: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "CM":
-					return value * 12 * 2.54;
+					return quantity * 12 * 2.54;
 				case "IN":
-					return value * 12;
+					return quantity * 12;
 				case "YD":
-					return value / 3;
+					return quantity / 3;
 				default:
 					return "Cannot convert this measurement.";
 			}
@@ -93,11 +93,11 @@ const unitOfMeasureConverter = (
 		YD: (arg: UnitOfMeasure) => {
 			switch (arg) {
 				case "CM":
-					return value * 3 * 12 * 2.54;
+					return quantity * 3 * 12 * 2.54;
 				case "IN":
-					return value * 3 * 12;
+					return quantity * 3 * 12;
 				case "FT":
-					return value * 3;
+					return quantity * 3;
 				default:
 					return "Cannot convert this measurement.";
 			}
