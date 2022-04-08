@@ -107,9 +107,11 @@ const unitOfMeasureConverter = (
 	return conversionIndex[originalUnitOfMeasure](desiredUnitOfMeasure);
 };
 
-console.info("3.8 Liters to Gallons: ", unitOfMeasureConverter(3.8, "L", "G"));
+const qty: number = 3.8;
+const orig: UnitOfMeasure = "L";
+const desired: UnitOfMeasure = "G";
 
 console.info(
-	"1.0 Foot to Centimeters: ",
-	unitOfMeasureConverter(1.0, "FT", "CM")
+	`${qty}${orig} to ${desired}: `,
+	unitOfMeasureConverter(qty, orig, desired)
 );
